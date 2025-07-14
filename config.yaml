@@ -2,7 +2,7 @@ authenticate_service_url: https://authenticate.localhost.pomerium.io
 
 idp_provider: oidc
 idp_client_id: 'mynewclient'
-idp_client_secret: 'eXI49LElUVF8sOs65wBLWPEDlHoRTouN' # Replace with the actual secret
+idp_client_secret: '22JZ0iqtSotMqYDVGILu4txzNPhTwuCT' # Replace with the actual secret
 idp_provider_url: 'http://keycloak.localhost.pomerium.io:8380/realms/Pomerium'
 
 signing_key: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSVA2TUN5UFI5OUNmSEVkU0s4cVdzbk51Q0RyMVZ3ay93RER1RVhyQitELzZvQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFQ0JTK3gyQnJRNVJqNHJFcU5PSEVsUFVESXJiRlNhRitoWEhEL1RYby9rQWVKU1lJSjJHVwpZMnE0a0NPNTU4RmdoYmxDTUplYVdjV1luT3JuZkpxeXRnPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=

@@ -1,11 +1,27 @@
 services:
+  postgres:
+    image: "postgres:17"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
   mykeycloak:
     image: quay.io/keycloak/keycloak:26.3.1
     command:
       - start-dev
+    depends_on:
+      - postgres
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://postgres:5432/postgres
+      - KC_DB_USERNAME=postgres
+      - KC_DB_PASSWORD=postgres
     ports:
       - 8380:8080
     networks:
@@ -24,3 +40,6 @@ services:
     image: pomerium/verify:latest
     environment:
       JWKS_ENDPOINT: https://pomerium/.well-known/pomerium/jwks.json
+
+volumes:
+  postgres_data:
